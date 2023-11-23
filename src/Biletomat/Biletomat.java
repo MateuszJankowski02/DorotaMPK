@@ -20,12 +20,12 @@ public class Biletomat {
 
 
     public Bilet createBilet20min(RodzajBiletu rodzaj){
-        Bilet nowyBilet = new Bilet20min(rodzaj);
+        Bilet nowyBilet = new Bilet20min(rodzaj, LocalDate.now());
         this.sprzedaneBilety.add(nowyBilet);
         return nowyBilet;
     }
     public Bilet createBilet60min(RodzajBiletu rodzaj ){
-        Bilet nowyBilet = new Bilet60min(rodzaj);
+        Bilet nowyBilet = new Bilet60min(rodzaj, LocalDate.now());
         this.sprzedaneBilety.add(nowyBilet);
         return nowyBilet;
     }
