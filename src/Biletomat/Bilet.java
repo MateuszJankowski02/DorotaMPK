@@ -1,11 +1,10 @@
 package Biletomat;
 
-abstract public class Bilet {
+public abstract class Bilet {
 
-
-    RodzajBiletu rodzaj;
-    String okres;
-    int cena;
+    protected RodzajBiletu rodzaj;
+    protected String okres;
+    protected int cena;
 
     protected Bilet(RodzajBiletu rodzaj) {
         if (rodzaj == RodzajBiletu.ulgowy || rodzaj == RodzajBiletu.normalny) {
