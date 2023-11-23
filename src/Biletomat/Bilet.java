@@ -14,4 +14,8 @@ abstract public class Bilet {
             throw new IllegalArgumentException("Podałeś zły rodzaj biletu!");
         }
     }
+    @Override
+    public String toString() {
+        return rodzaj + " - " + cena+"-"+okres;
+    }
 }
