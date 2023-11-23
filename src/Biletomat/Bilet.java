@@ -8,7 +8,6 @@ public abstract class Bilet {
     protected RodzajBiletu rodzaj;
     protected String okres;
     protected int cena;
-
     protected Bilet(RodzajBiletu rodzaj, LocalDate dataWydaniaBiletu) {
         this.dataWydaniaBiletu = dataWydaniaBiletu;
         if (rodzaj == RodzajBiletu.ulgowy || rodzaj == RodzajBiletu.normalny) {
@@ -18,20 +17,20 @@ public abstract class Bilet {
         }
     }
 
-    public RodzajBiletu getRodzaj() {
-        return rodzaj;
-    }
-
-    public LocalDate getDataWydaniaBiletu() {
-        return dataWydaniaBiletu;
+    public String getOkres() {
+        return okres;
     }
 
     public int getCena() {
         return cena;
     }
 
-    public String getOkres() {
-        return okres;
+    public RodzajBiletu getRodzaj() {
+        return rodzaj;
+    }
+
+    public LocalDate getDataWydaniaBiletu() {
+        return dataWydaniaBiletu;
     }
 
     @Override

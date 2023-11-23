@@ -7,4 +7,5 @@ public class Pieniadz {
     public Pieniadz(float wartosc) {
         this.wartosc = wartosc;
     }
+
 }
