@@ -11,7 +11,7 @@ public class Biletomat {
     String lokalizacja;
     LocalDate data;
 
-    public Biletomat(int iloscBlankietow, int iloscMonet, String lokalizacja){
+    public Biletomat(int iloscBlankietow, int iloscMonet, String lokalizacja) {
         this.iloscBlankietow = iloscBlankietow;
         this.iloscMonet = iloscMonet;
         this.lokalizacja = lokalizacja;
@@ -19,18 +19,30 @@ public class Biletomat {
     }
 
 
-    public Bilet createBilet20min(RodzajBiletu rodzaj){
+    public Bilet createBilet20min(RodzajBiletu rodzaj) {
         Bilet nowyBilet = new Bilet20min(rodzaj, LocalDate.now());
         this.sprzedaneBilety.add(nowyBilet);
         return nowyBilet;
     }
-    public Bilet createBilet60min(RodzajBiletu rodzaj ){
+
+    public Bilet createBilet60min(RodzajBiletu rodzaj) {
         Bilet nowyBilet = new Bilet60min(rodzaj, LocalDate.now());
         this.sprzedaneBilety.add(nowyBilet);
         return nowyBilet;
     }
 
-    public Serwis createSerwis(){
+    public Serwis createSerwis() {
         return new Serwis();
+    }
+
+    public void wypiszSprzedaneBilety() {
+        System.out.println("Sprzedane bilety:");
+
+        for (Bilet bilet : sprzedaneBilety) {
+            System.out.println("Data: " + bilet.getDataWydaniaBiletu() +
+                    ", Rodzaj: " + bilet.getRodzaj() +
+                    ", Cena: " + bilet.getCena() +
+                    ", Okres: " + bilet.getOkres());
+        }
     }
 }

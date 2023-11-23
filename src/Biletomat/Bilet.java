@@ -17,6 +17,23 @@ public abstract class Bilet {
             throw new IllegalArgumentException("Podałeś zły rodzaj biletu!");
         }
     }
+
+    public RodzajBiletu getRodzaj() {
+        return rodzaj;
+    }
+
+    public LocalDate getDataWydaniaBiletu() {
+        return dataWydaniaBiletu;
+    }
+
+    public int getCena() {
+        return cena;
+    }
+
+    public String getOkres() {
+        return okres;
+    }
+
     @Override
     public String toString() {
         return rodzaj + " - " + cena+"-"+okres;
