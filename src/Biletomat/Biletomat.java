@@ -1,9 +1,12 @@
 package Biletomat;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Biletomat {
 
+    private List<Bilet> sprzedaneBilety = new ArrayList<>();
     int iloscBlankietow, iloscMonet;
     String lokalizacja;
     LocalDate data;
@@ -17,10 +20,14 @@ public class Biletomat {
 
 
     public Bilet createBilet20min(RodzajBiletu rodzaj){
-        return new Bilet20min(rodzaj);
+        Bilet nowyBilet = new Bilet20min(rodzaj);
+        this.sprzedaneBilety.add(nowyBilet);
+        return nowyBilet;
     }
     public Bilet createBilet60min(RodzajBiletu rodzaj ){
-        return new Bilet60min(rodzaj);
+        Bilet nowyBilet = new Bilet60min(rodzaj);
+        this.sprzedaneBilety.add(nowyBilet);
+        return nowyBilet;
     }
 
     public Serwis createSerwis(){
