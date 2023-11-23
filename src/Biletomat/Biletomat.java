@@ -31,7 +31,7 @@ public class Biletomat {
     }
 
     public Serwis createSerwis(){
-        return new Serwis();
+        return new Serwis(this);
     }
 
     public void wypiszSprzedaneBilety() {
