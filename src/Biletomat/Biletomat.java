@@ -33,4 +33,15 @@ public class Biletomat {
     public Serwis createSerwis(){
         return new Serwis();
     }
+
+    public void wypiszSprzedaneBilety() {
+        System.out.println("Sprzedane bilety:");
+
+        for (Bilet bilet : sprzedaneBilety) {
+            System.out.println("Data: " + bilet.getDataWydaniaBiletu() +
+                    ", Rodzaj: " + bilet.getRodzaj() +
+                    ", Cena: " + bilet.getCena() +
+                    ", Okres: " + bilet.getOkres());
+        }
+    }
 }
