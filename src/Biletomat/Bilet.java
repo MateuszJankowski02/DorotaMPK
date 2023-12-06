@@ -2,7 +2,15 @@ package Biletomat;
 
 import java.time.LocalDate;
 
-public abstract class Bilet {
+interface BiletInterface{
+    String getOkres();
+    int getCena();
+    RodzajBiletu getRodzaj();
+    LocalDate getDataWydaniaBiletu();
+
+}
+
+public abstract class Bilet implements BiletInterface {
 
     protected LocalDate dataWydaniaBiletu;
     protected RodzajBiletu rodzaj;
@@ -17,18 +25,22 @@ public abstract class Bilet {
         }
     }
 
+    @Override
     public String getOkres() {
         return okres;
     }
 
+    @Override
     public int getCena() {
         return cena;
     }
 
+    @Override
     public RodzajBiletu getRodzaj() {
         return rodzaj;
     }
 
+    @Override
     public LocalDate getDataWydaniaBiletu() {
         return dataWydaniaBiletu;
     }

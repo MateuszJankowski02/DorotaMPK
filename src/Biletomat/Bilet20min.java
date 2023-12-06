@@ -2,6 +2,7 @@ package Biletomat;
 
 import java.time.LocalDate;
 
+//Przykład dziedziczenia po klasie Bilet
 public class Bilet20min extends Bilet {
 
     protected Bilet20min(RodzajBiletu rodzaj, LocalDate dataWydaniaBiletu){

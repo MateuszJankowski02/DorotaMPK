@@ -4,8 +4,17 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Biletomat {
 
+//implemate interface for class biletomat
+interface BiletomatInterface{
+    Bilet kupBilet20min(RodzajBiletu rodzaj, Pieniadz pieniadz);
+    Bilet kupBilet60min(RodzajBiletu rodzaj, Pieniadz pieniadz);
+    Serwis createSerwis();
+    void wypiszSprzedaneBilety();
+}
+public class Biletomat implements BiletomatInterface{
+    private static int nextID = 1;
+    private int ID;
     private List<Bilet> sprzedaneBilety = new ArrayList<>();
     int iloscBlankietow, iloscMonet;
     String lokalizacja;
@@ -16,6 +25,8 @@ public class Biletomat {
         this.iloscMonet = iloscMonet;
         this.lokalizacja = lokalizacja;
         this.data = LocalDate.now();
+        this.ID = nextID;
+        nextID++;
     }
 
     public Bilet kupBilet20min(RodzajBiletu rodzaj, Pieniadz pieniadz){
@@ -29,13 +40,13 @@ public class Biletomat {
         return nowyBilet;
     }
 
+    //Metoda tworząca serwis dla konkretnego obiektu biletomatu
     public Serwis createSerwis(){
         return new Serwis(this);
     }
 
     public void wypiszSprzedaneBilety() {
         System.out.println("\n\nSprzedane bilety:");
-
         for (Bilet bilet : sprzedaneBilety) {
             System.out.println("Data: " + bilet.getDataWydaniaBiletu() +
                     ", Rodzaj: " + bilet.getRodzaj() +

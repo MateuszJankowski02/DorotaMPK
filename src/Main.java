@@ -4,20 +4,22 @@ public class Main {
 
     public static void main(String[] args){
 
-        Biletomat biletomat = new Biletomat(10,40,"Politechnika");
+        Biletomat biletomat = new Biletomat(10,40,"Krowodrza Górka");
 
-        Bilet normalnybilet = biletomat.kupBilet60min(RodzajBiletu.normalny,new Gotowka(10,1));
-        Bilet normalnybilet1 = biletomat.kupBilet20min(RodzajBiletu.normalny, new Karta(5));
-        Bilet ulgowybilet1 = biletomat.kupBilet20min(RodzajBiletu.ulgowy,new Gotowka(10,1));
-        Bilet ulgowybilet = biletomat.kupBilet60min(RodzajBiletu.ulgowy, new Karta(6));
+        Bilet bilet1 = biletomat.kupBilet60min(RodzajBiletu.ulgowy,new Karta(10));
+        Bilet bilet2 = biletomat.kupBilet20min(RodzajBiletu.normalny, new Gotowka(5, 5));
+        Bilet bilet3 = biletomat.kupBilet20min(RodzajBiletu.normalny,new Gotowka(10,1));
+        Bilet bilet4 = biletomat.kupBilet60min(RodzajBiletu.ulgowy, new Karta(6));
+        Bilet bilet5 = biletomat.kupBilet20min(RodzajBiletu.normalny, new Karta(6));
 
-        Serwis serwis1=biletomat.createSerwis();
-        System.out.print(serwis1.toString());
+        Serwis serwis =biletomat.createSerwis();
+        System.out.print(serwis.toString());
         biletomat.wypiszSprzedaneBilety();
-        serwis1.setIloscBlankietow(23);
-        serwis1.setIloscMonet(8000);
-        serwis1.setBilet(ulgowybilet1,30,RodzajBiletu.normalny);
-        System.out.print(serwis1.toString());
+        serwis.setIloscBlankietow(13);
+        serwis.setIloscMonet(5274);
+        serwis.setLokalizacja("Rondo Mogilskie");
+        serwis.setBilet(bilet3,17,RodzajBiletu.ulgowy);
+        System.out.print(serwis.toString());
     }
 
 }
